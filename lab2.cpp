@@ -5,15 +5,15 @@
 using namespace std;
 
 class Vector {
-	friend void operator <<(ostream& m, Vector& f) {
+	friend void operator <<(ostream& m, Vector& f) { // перегрузка оператора <<, который выполняет вывод элементов вектора в поток
 		for (int i = 0; i < f.n; ++i) m << f.vec[i] << " ";
 	}
 
-	friend void operator >>(istream& m, Vector& f) {
+	friend void operator >>(istream& m, Vector& f) { // перегрузка оператора >>, который выполняет ввод элементов вектора из потока
 		for (int i = 0; i < f.n; ++i) m >> f.vec[i];
 	}
 
-	friend Vector& operator ^(bool* a, Vector& b) {
+	friend Vector& operator ^(bool* a, Vector& b) { // ^ логическая операция (исключающая ИЛИ) с двумя векторами одинаковой
 		
 			bool* mas = new bool[b.n];
 			Vector* c = new Vector(mas, b.n);
