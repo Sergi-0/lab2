@@ -13,8 +13,7 @@ class Vector {
 		for (int i = 0; i < f.n; ++i) m >> f.vec[i];
 	}
 
-	friend Vector& operator ^(bool* a, Vector& b) { // ^ логическая операция (исключающая ИЛИ) с двумя векторами одинаковой
-		
+	friend Vector& operator ^(bool* a, Vector& b) { // ^ логическая операция (исключающая ИЛИ) с двумя векторами одинаковой	
 			bool* mas = new bool[b.n];
 			Vector* c = new Vector(mas, b.n);
 			for (int i = 0; i < b.n; ++i) c->vec[i] = bool(a[i] * b.vec[i]);
