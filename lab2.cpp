@@ -53,7 +53,7 @@ Vector::Vector(const Vector& a) {
 	for (int i = 0; i < a.n; ++i)  this->vec[i] = a.vec[i];
 }
 
-Vector::Vector(Vector&& a) {                 // правая ссылка для отличия от предыдущего конструктора
+Vector::Vector(Vector&& a) {                 // правая ссылка для отличия от предыдущего конструктора(в помощь move)
 	swap(vec, a.vec);
 	swap(n, a.n);
 }
